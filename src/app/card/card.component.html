@@ -1,6 +1,6 @@
 <div class="card">
-  <h2>{{ title }}</h2>
-  <p>{{ text }} -- {{ getInfo() }}</p>
+  <h2>{{ index }}: {{ card.title }}</h2>
+  <p>{{ card.text }} -- {{ getInfo() }}</p>
   <pre>{{ info | json }}</pre>
   <strong>Number: {{ number }}</strong>
   <br>
@@ -8,5 +8,8 @@
   <button [disabled]="disabled">Enable</button>
   <div>
     <img [src]="imgUrl">
+  </div>
+  <div>
+    <strong>{{ cardDate | date:'dd MMMM yyyy HH:mm:ss Z':undefined:'ru' }}</strong>
   </div>
 </div>

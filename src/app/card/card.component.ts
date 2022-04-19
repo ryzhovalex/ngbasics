@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Card } from '../app.component';
 
 @Component({
   selector: 'app-card',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  title: string = 'Some title';
-  text: string = 'I love text';
+  @Input() card: Card;
+  @Input() index: number;
+
+  cardDate: Date = new Date();
   number: number = 42;
   fibo = [1, 1, 2, 3, 5, 8];
   info = {name: 'Sam', value: 35, location: {city: 'Moscow', country: 'Russia'}};

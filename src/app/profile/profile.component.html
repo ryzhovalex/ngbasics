@@ -1,0 +1,31 @@
+<div class="profile">
+  <h2 [ngStyle]="{
+    color: title.length < 5 ? 'black' : 'green',
+    fontWeight: title.length < 7 ? 'normal' : 'bold'
+  }">{{ title }}</h2>
+  <p class="text" [ngClass]="{
+    blue: textColor === 'blue',
+    green: textColor === 'green',
+    red: textColor === 'red'
+  }">{{ text }}</p>
+  <div>
+    Badges: {{ badges }}
+  </div>
+  <br>
+  <div class="buttons">
+    <button (click)="changeTitle()">Change title</button>
+    <button (click)="title = 'Inline title'">Change inline title</button>
+    <br>
+    <button (click)="textColor = 'green'">Set green</button>
+    <button (click)="textColor = 'blue'">Set blue</button>
+    <button (click)="textColor = 'red'">Set red</button>
+  </div>
+  <div>
+    <input type="text" (input)="inputTitleHandler($event)" [value]="title">
+    <br>
+    <br>
+    <input type="text" #textInput (input)="inputTextHandler(textInput.value)" [value]="text">
+    <br>
+    <br>
+    <input type="text" [(ngModel)]="badges" (ngModelChange)="changeHandler()">
+</div>

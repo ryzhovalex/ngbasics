@@ -1,0 +1,15 @@
+.buttons {
+  margin-bottom: 1rem;
+}
+
+.text {
+  &.red {
+    color: red;
+  }
+  &.green {
+    color: green;
+  }
+  &.blue {
+    color: blue;
+  }
+}
